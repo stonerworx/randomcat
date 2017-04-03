@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="de">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>randomcat.xyz</title>
+    <style type="text/css">
+      body {
+        padding: 0;
+        margin: 0;
+        background-color: #222222;
+        color: #eeeeee;
+        font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+        font-size: 12px;
+      }
+      .container {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        text-align: center;
+        width: 100%;
+      }
+      .cat {
+        box-shadow: 0px 0px 20px #111111;
+        border: 5px solid #eeeeee;
+      }
+      .footer {
+        position: absolute;
+        bottom: 10px;
+        width: 100%;
+        text-align: center;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="container">
+      <a href="https://thecatapi.com">
+        <img id="cat" class="cat" src="https://thecatapi.com/api/images/get?format=src&type=gif">
+      </a>
+    </div>
+    <div class="footer">
+      randomcat.xyz
+    </div>
+  </body>
+  <script type="text/javascript">
+      window.addEventListener('load', function() {
+        var image = document.getElementById('cat');
+        window.setInterval(function() {
+          image.src = 'http://thecatapi.com/api/images/get?format=src&type=gif&' + new Date().getTime()
+        }, 60000);
+      });
+    </script>
+</html>
